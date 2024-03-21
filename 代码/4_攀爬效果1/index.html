@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #000;
+            overflow: hidden;
+        }
+        .container{
+            position:relative;
+            width: 100%;
+            transform:rotate(-35deg)
+        }
+        .container .box{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: calc(100%+400px);
+            -webkit-box-reflect: below 1px linear-gradient(transparent,#0004);
+            /* 倒影模块 底部 距离底部1px 颜色透明直到黑色 */
+            animation:animateSurface 1.5s ease-in-out infinite;
+            left: -100px;
+        }
+        @keyframes animateSurface{
+            0%{
+                transform:translateX(0px)
+            }
+            100%{
+                transform:translateX(-200px)
+            }
+        }
+        .container .box .cube{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background: #03e9f4;
+            box-shadow: 0 0 5px rgba(3,233,244,1),
+            0 0 25px rgba(3,233,244,1),
+            0 0 50px rgba(3,233,244,1),
+            0 0 100px rgba(3,233,244,1),
+            0 0 200px rgba(3,233,244,0.5),
+            0 0 300px rgba(3,233,244,0.5);
+            transform-origin: bottom right;
+            /* 指定基准为bottom */
+            animation:animate 1.5s ease-in-out infinite;
+            /* ease-in-out 会让动画在开始时有一个较慢的加速度，然后在中间阶段有一个较快的加速度,最后在接近结束时有一个减速度，从而形成一个平滑的过渡效果 */
+        }
+        @keyframes animate{
+            0%{
+                transform:rotate(0deg);
+            }
+            60%{
+                transform: rotate(90deg);
+            }
+            60%{
+                transform: rotate(90deg);
+            }
+            65%{
+                transform: rotate(85deg);
+            }
+            68%{
+                transform: rotate(90deg);
+            }
+            75%{
+                transform: rotate(87.5deg);
+            }
+            80%,100%{
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="cube">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

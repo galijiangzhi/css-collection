@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+        /* 这个文件保存在了目标文件夹里，有需要请去文件夹中寻找fonts.css  这个是字体 非必要引用*/
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+            font-family: 'Poppins',sans-serif;
+        }
+        body{
+            display:flex;
+            justify-content:center;
+            align-items: center;
+            min-height: 100vh;
+            background: #252839;
+        }
+        h2{
+            position: relative;
+            font-size: 14vw;
+            color:#252839;
+            -webkit-text-stroke:0.3vw #382d52;
+            text-transform: uppercase;
+        }
+        h2::before{
+            /* 设置刷新之后的字体颜色 然后设置width 超出width的不显示 */
+            content:attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            color:#01fe78;
+            -webkit-text-stroke: 0vm #383d52;
+            border-right: 2px solid #01fe87;
+            overflow:hidden;
+            animation:animate 6s linear infinite;
+        }
+        @keyframes animate{
+            0%,10%,100%{
+                width:0;
+            }
+            70%,90%{
+                width:100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <h2 data-text="AYANAMI...">AYANAMI...</h2>
+</body>
+</html>
